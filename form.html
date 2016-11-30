@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>My Project</title>
+		
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+	<link href="css/style.css" rel="stylesheet">
+
+
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+</head>
+
+<body>
+		
+	<div id="maindiv">
+		
+<div class="container design_api_container">
+	<div class='design_api'>
+		<!--=============================================================-->
+		<div id="menu">
+			<div class="menu_option sel_type">
+
+			</div>
+			<div class="menu_option sel_color">
+				<i class="fa fa-paint-brush fa-3x"></i>
+
+			</div>
+			<div class="menu_option sel_art">
+				<i class="fa fa-camera-retro fa-3x"></i>
+			</div>
+			<div class="menu_option sel_text">
+				<i class="fa fa-font fa-3x"></i>
+			</div>
+		</div>
+		<!--=============================================================-->
+		<div id='options'>
+			<div class="T_type">
+				<div id="radio1" ><img src="images/menu_icons/submenu/tee.jpg" width="100%" height="100%" />
+				</div>
+				<div id="radio3" ><img src="images/menu_icons/submenu/hoodie.jpg" width="100%" height="100%" />
+				</div>
+			</div>
+
+			<div class="color_pick">
+				<div class="color_radio_div" id="red"></div>
+				<div class="color_radio_div" id="black"></div>
+				<div class="color_radio_div" id="white"></div>
+				<div class="color_radio_div" id="navy"></div>
+				<div class="color_radio_div" id="green"></div>
+			</div>
+			<div class="default_samples">
+
+			<script type="text/javascript">
+			var dir = 'images/Images',
+				numberImages = 51;
+			for(var i=1; i <= numberImages; i++) {
+				document.write('<div class="sample_icons"><img src="images/Images/clip (' + i + ').png" width="100%" height="100%" /></div>');
+			}
+			</script>
+				
+			</div>
+
+			<div class="custom_font">
+
+				<input type="color" name="favcolor" onChange="changeColor(this.value);" placeholder="Color Name" />
+				<textarea id="custom_text" placeholder="Create Your Custom Text..."></textarea>
+				<button type="button" class="btn btn-primary" id="apply_text">
+					Apply
+				</button>
+
+			</div>
+		</div>
+		<!--=============================================================-->
+		<!--=========================preview start====================================-->
+
+		<div id='preview_t'>
+			<div id="preview_front">
+				<div class="front_print">
+					<div id="mytext-front"></div>
+					<div id="myicon-front"></div>
+				</div>
+			</div>
+			<div id="preview_back">
+				<div class="back_print">
+					<div id="mytext-back"></div>
+					<div id="myicon-back"></div>
+				</div>
+			</div>
+
+		</div>
+		<!--=============================================================-->
+		<!--======================view start=======================================-->
+
+		<div id='view_mode'>
+			<div  class="mode"><img id="o_front" src="images/product/tee/black/black_front.png" width="100%" height="80%" />FRONT
+			</div>
+			<div  class="mode"><img id="o_back" src="images/product/tee/black/black_back.png" width="100%" height="80%" />BACK
+			</div>
+			<div class="mode">
+				<i class="fa fa-binoculars fa-4x preview_images" id="preview_images" data-toggle="modal" data-target=".bs-example-modal-lg"></i>Preview
+			</div>
+		</div>
+		<!--=====================View Ends========================================-->
+		<div id="overview">
+			<div class="">
+
+				<table class="table">
+					<tr>
+						<th>Size</th>
+						<th>Quantity</th>
+					</tr>
+					<tr>
+						<td><b>S</b></td>
+						<td>
+						<input id="small"  onchange="changeval()" name="small" type="number" value="1" class="form-control small input-md" min=0 max=99999 />
+						</td>
+					</tr>
+					<tr>
+						<td><b>M</b></td>
+						<td>
+						<input id="medium"  onchange="changeval()" name="medium" type="number" value="0" class="form-control medium input-md" min=0 max=99999 />
+						</td>
+					</tr>
+					<tr>
+						<td><b>L</b></td>
+						<td>
+						<input id="large" onchange="changeval()"  name="large" type="number" value="0" class="form-control large input-md" min=0 max=99999 />
+						</td>
+					</tr>
+					<tr>
+						<td><b>XL</b></td>
+						<td>
+						<input id="xlarge"  onchange="changeval()" name="xlarge" type="number" value="0" class="form-control xlarge input-md" min=0 max=99999 />
+						</td>
+					</tr>
+					<tr>
+						<td><b>XXL</b></td>
+						<td>
+						<input id="xxlarge" onchange="changeval()"  name="xxlarge" type="number" value="0" class="form-control xxlarge input-md" min=0 max=99999 />
+						</td>
+					</tr>
+					<tr>
+						<td><b>Total</b></td>
+						<td>
+						<input onchange="updatePrice(this.value)" id="total" name="total" type="number" value="1" class="form-control total input-md" disabled min=1 max=99999 />
+						</td>
+					</tr>
+
+				</table>
+
+				<button type="button" class="btn btn-primary btn-block preview_images"  data-toggle="modal" data-target=".bs-example-modal-lg">
+					Proceed
+				</button>
+
+				Price : $<span class="price_here">15</span>/-
+			</div>
+		</div>
+	</div>
+
+	<!-- Large modal -->
+	<!--
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+	<div class="modal-content"> -->
+
+	<div class="layer">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close close_img" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span><span class="sr-only close_img">Close</span>
+				</button>
+				<h4 class="modal-title">Showcase</h4>
+			</div>
+			<div class="modal-body">
+
+				<div id="image_reply"></div>
+				<div class="modal-footer">
+					<div class="row">
+						<form method="POST" enctype="multipart/form-data" id="imageFileForm" action="http://atlantis.cit.ie/displayvalues.php">
+							<div class="col-md-1">
+								<button type="button" class="btn btn-default close_img" data-dismiss="modal">
+									Close
+								</button>
+							</div>
+							<div class="col-md-12">
+								Price : $<span class="price_here">15</span>/-
+								<input name="price" type="hidden" val='15' id="price">
+							</div>
+
+							<div class="col-md-12">
+							    <div class="form-group">
+							      <label class="control-label col-sm-2" for="name">Full Name:</label>
+							      <div class="col-sm-10">
+							        <input name="name" required type="text" class="form-control" id="name" placeholder="Enter your name">
+							      </div>
+							    </div>
+
+							    <div class="form-group">
+							      <label class="control-label col-sm-2" for="email">Email:</label>
+							      <div class="col-sm-10">
+							        <input name="email" required type="email" class="form-control" id="email" placeholder="Enter email">
+							      </div>
+							    </div>
+
+							    <div class="form-group">
+							      <label class="control-label col-sm-2" for="phone">Phone Number:</label>
+							      <div class="col-sm-10">
+							        <input name="phone" required type="tel" class="form-control" id="phone" placeholder="Enter your phone">
+							      </div>
+							    </div>
+
+							    <div class="form-group">
+							      <label class="control-label col-sm-2" for="address">Address:</label>
+							      <div class="col-sm-10">
+							        <input name="address" required type="text" class="form-control" id="address" placeholder="Enter your address">
+							      </div>
+							    </div>
+
+								<center>
+									<table class="table">
+
+										<tr>
+											<td><b>S</b></td>
+											<td><b>M</b></td>
+											<td><b>L</b></td>
+											<td><b>XL</b></td>
+											<td><b>XXL</b></td>
+											<td><b>Total</b></td>
+										</tr>
+										<tr>
+											<td>
+											<input id="small2" onchange="changeval2()"  name="small" type="number" value="1" class="form-control small input-md" min=0 max=99999 />
+											</td>
+
+											<td>
+											<input id="medium2" onchange="changeval2()"  name="medium" type="number" value="0" class="form-control medium input-md" min=0 max=99999 />
+											</td>
+
+											<td>
+											<input id="large2" onchange="changeval2()"  name="large" type="number" value="0" class="form-control large input-md" min=0 max=99999 />
+											</td>
+
+											<td>
+											<input id="xlarge2" onchange="changeval2()"  name="xlarge" type="number" value="0" class="form-control xlarge input-md" min=0 max=99999 />
+											</td>
+
+											<td>
+											<input id="xxlarge2" onchange="changeval2()"  name="xxlarge" type="number" value="0" class="form-control xxlarge input-md" min=0 max=99999 />
+											</td>
+
+											<td>
+											<input onchange="updatePrice(this.value)" id="total2" name="total" type="number" value="1" class="form-control total input-md" disabled min=1 max=99999 />
+											</td>
+										</tr>
+
+								</center>
+								</table>
+							</div>
+							<div class="col-md-2">
+								<input type="hidden" name="img_front" id="img_front" value="" />
+								<input type="hidden" name="img_back" id="img_back" value="" />
+								<button type="submit" class="btn btn-primary">
+									Buy Now!
+								</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+</div>
+
+
+
+<script src="js/calculate.js"></script>
+
+	
+</body>
+		
+</html>
